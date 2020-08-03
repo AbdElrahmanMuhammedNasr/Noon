@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #e3e3e3; text-align: center">
+  <div style="background-color: #e3e3e3; ">
     <hr>
     <div class="container">
       <div class="row">

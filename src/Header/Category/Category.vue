@@ -1,34 +1,55 @@
 <template>
-  <div style=" width: 70%; margin: 15px auto; text-align: center">
+  <div style=" width: 70%; margin: 15px auto; text-align: center;  padding:0px 10px">
 
     <nav class="navbar navbar-expand-lg navbar-light" style="height: 20px">
 
       <div class="collapse navbar-collapse" >
         <ul class="navbar-nav row mr-auto">
 
+
           <li class="nav-item col active">
-            <a class="nav-link" href="#">Electorn</a>
+            <router-link to="/home">
+              <a class="nav-link" >Electorn</a>
+            </router-link>
+          </li>
+
+          <li class="nav-item col">
+            <router-link to="/home">
+              <a class="nav-link" >Mobile</a>
+            </router-link>
           </li>
           <li class="nav-item col">
-            <a class="nav-link" href="#">Mobile</a>
+
+            <router-link to="/home">
+              <a class="nav-link" >Fasion</a>
+            </router-link>
+
           </li>
           <li class="nav-item col">
-            <a class="nav-link" href="#">Fasion</a>
+            <router-link to="/home">
+              <a class="nav-link" >Home</a>
+            </router-link>
+
           </li>
           <li class="nav-item col">
-            <a class="nav-link" href="#">Home</a>
+            <router-link to="/home">
+              <a class="nav-link" >Baby</a>
+            </router-link>
           </li>
           <li class="nav-item col">
-            <a class="nav-link" href="#">Baby</a>
+            <router-link to="/home">
+              <a class="nav-link" >Health</a>
+            </router-link>
           </li>
           <li class="nav-item col">
-            <a class="nav-link" href="#">Health</a>
+            <router-link to="/home">
+              <a class="nav-link" >SuberMarket</a>
+            </router-link>
           </li>
           <li class="nav-item col">
-            <a class="nav-link" href="#">SuberMarket</a>
-          </li>
-          <li class="nav-item col">
-            <a class="nav-link" href="#">Deals</a>
+            <router-link to="/home">
+              <a class="nav-link" >Deals</a>
+            </router-link>
           </li>
 
 

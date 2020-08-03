@@ -28,7 +28,7 @@
 <!--      </div>-->
       <div style="padding: 0px ; width: 76%; margin: auto">
         <nav class="navbar navbar-expand-lg navbar-light" >
-          <a class="navbar-brand font-weight-bolder" href="#" >Noon</a>
+        <router-link to="/home"><a class="navbar-brand font-weight-bolder" >Noon</a></router-link>
 
           <button class="navbar-toggler" type="button"
                   data-toggle="collapse"
@@ -57,10 +57,21 @@
 
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">SignUp</a>
+                <router-link to="/login">
+                  <a class="nav-link">login</a>
+                </router-link>
               </li>
+
               <li class="nav-item">
-                <a class="nav-link" href="#">Cart</a>
+                <router-link to="/cart">
+                  <a class="nav-link" ><span style="font-size: 25px" class="fa fa-shopping-cart"></span></a>
+                </router-link>
+              </li>
+
+              <li class="nav-item">
+                <router-link to="/profile">
+                  <a class="nav-link" ><span style="font-size: 25px" class="fa fa-user"></span></a>
+                </router-link>
               </li>
 
             </ul>

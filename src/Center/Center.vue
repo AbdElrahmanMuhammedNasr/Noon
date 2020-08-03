@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 88%;height: 100vh ;margin: auto; padding: 0px">
+  <div style="width: 88%;height: 250vh ;margin: auto;">
     <TopPath></TopPath>
     <div class="row">
         <Category class="col-sm-2 d-none d-sm-block"></Category>
