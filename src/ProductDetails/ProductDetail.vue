@@ -1,23 +1,29 @@
 <template>
   <div class="row" style="width: 80% ; margin: auto">
-    <section class="col">
+    <section class="col-sm-4 col-12">
       <img :src="singleProdut.image">
     </section>
-    <section class="col offset-1">
+    <section class="col-sm-3 offset-1 col-12" style="border: 1px solid lightgray; padding: 20px;margin-top: 20px">
         <p class="text-muted" style="font-size:13px">{{singleProdut.type}}</p>
         <section style="padding-left: 15px">
           <h6>{{singleProdut.name}}</h6>
-          <small class="text-muted" > Model Number: {{singleProdut.modelNumber}}</small>
-          <br>
-          <p v-if="singleProdut.discount"> <small class="text-muted" style="font-size:15px">was:</small> <del style="font-size: 15px"> 200 EGP</del></p>
-          <p> <small class="text-muted" style="font-size:15px">Now:</small> <strong style="font-size: 20px">150 EGP</strong></p>
-          <p v-if="singleProdut.discount"> <small class="text-muted" style="font-size:15px">Save:</small> 50 EGP <small style="background-color: #b3f65d; color: green;padding: 5px">20%Off</small></p>
+          <section>
+            <small class="text-muted" style="font-size: 15px; "> Model Number: {{singleProdut.modelNumber}}</small>
+          </section>
+
+          <section style="margin-top: 15px">
+            <p v-if="singleProdut.discount"> <small class="text-muted" style="font-size:15px">was:</small> <del style="font-size: 15px"> {{singleProdut.price}}  EGP</del></p>
+            <p> <small class="text-muted" style="font-size:15px">Now:</small> <strong style="font-size: 20px">{{ singleProdut.discount == false ? singleProdut.price : singleProdut.price-singleProdut.discount}} EGP</strong></p>
+            <p v-if="singleProdut.discount"> <small class="text-muted" style="font-size:15px">Save:</small> {{singleProdut.discount}} EGP <small style="background-color: #b3f65d; color: green;padding: 5px">{{ (singleProdut.discount / singleProdut.price) *100 }} %Off</small></p>
+
+          </section>
+
         </section>
 
       <hr>
-      <h6>Deliver to Cairo</h6>
+      <h6>Deliver to <strong style="color: green">{{singleProdut.city}}</strong> </h6>
       <h6>Deliver by form today <span style="color: green; font-weight: bolder">sat Aug 22</span></h6>
-      <h6>Time : 1 day</h6>
+      <h6>Deliver in : <strong style="color: green">{{singleProdut.deliverIn}}</strong></h6>
 
       <section v-if="singleProdut.type == 'clothes'" >
         <hr>
@@ -40,7 +46,7 @@
       </section>
 
     </section>
-    <section class="col offset-1">
+    <section class="col-sm-3 offset-1 col-12" style="border: 1px solid lightgray; padding: 20px; margin-top: 20px">
         <p>1 year warranty</p>
         <p>Sold by noon</p>
       <hr>
@@ -77,26 +83,23 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     data(){
       return{
-        singleProdut:{
-          image:'https://cdn.pixabay.com/photo/2015/01/14/18/41/home-office-599475__340.jpg',
-          type:'Laptop',
-          modelNumber:'1120f1f',
-          name:'Dell 3350 E',
-          discount:false,
-          overview :[
-              'Force Touch trackpad accounts for precise cursor control and pressure-sensing capabilities',
-              'High‑performance processors with powerful integrated graphics offer blazing fast performance',
-              'Secure Enclave coprocessor provides the foundation for secure boot and storage capabilities',
-              'Power through your whole day with long hours of battery life',
-              'Touch-pad with multi-touch gesture support'
-          ]
-
-        }
-      }
+        singleProdut:{}
     }
+    },
+  created() {
+    axios.get('http://localhost:3000/detailsProduct/getProduct')
+        .then(res =>{
+          this.singleProdut = res.data
+          // console.log(res)
+        })
+        .catch()
+
+  }
 }
 </script>
 
@@ -104,6 +107,7 @@ export default {
 img{
   width: 100%;
   height: 500px;
+  border-radius: 50px 0px;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="Product" @click="goToProduct">
+    <div class="Product" @click="goToProduct" >
         <img class="ProductImg" :src="Product.image">
         <p class="card-text text-muted" style="font-size: 13px">{{Product.dis}}</p>
         <p><small> EGP</small> <strong>{{Product.price}}</strong> </p>
@@ -7,7 +7,6 @@
         <small v-if="Product.express">
           <img class="ExpressImg" src="https://k.nooncdn.com/s/app/2019/noon-bigalog/48dde9a7d3fdcbdf1d6d56f7d4158a22f65859dd/static/images/noon-express-en.png">
         </small>
-
         <small v-if="Product.discount" class="col" style="padding: 5px; background-color: #b3f65d; color: green">{{Product.discount}}% off</small>
 
 
@@ -29,8 +28,8 @@ export default {
     .Product{
       cursor: pointer;
       width:200px;
-      height:44vh;
-      margin: 15px 0px;
+      height:51vh;
+      margin: 15px auto;
       padding: 10px;
       /*border: 1px solid black;*/
       /*background-color: darkorange;*/

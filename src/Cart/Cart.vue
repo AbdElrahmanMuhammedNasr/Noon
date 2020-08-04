@@ -38,7 +38,7 @@
           </section>
         </section>
 
-        <button class="btn btn-primary btn-block" style="border: none">CHECKOUT NOW</button>
+        <button class="btn btn-primary btn-block" style="height: 50px">CHECKOUT NOW</button>
       </section>
     </div>
 </template>
@@ -48,7 +48,7 @@ import CartProduct from "@/Cart/CartProduct/CartProduct";
 export default {
   data(){
     return{
-      carts :[1,2,3,4,5,6,9,7,7,1]
+      carts :[1,2,3,4,5,6,9,]
     }
   }
   ,components:{

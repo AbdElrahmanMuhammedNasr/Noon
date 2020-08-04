@@ -5,7 +5,8 @@
 
       <h6 class="text-muted">Zara</h6>
       <h5>chose</h5>
-      <h6>Deliverd by <strong> Aug 12 </strong></h6>
+      <h6>Delivered by <strong> Aug 12 </strong></h6>
+      <h6>Deliver in <strong> 12h </strong></h6>
     </section>
     <section class="col-sm-2">
       <h5><small>EGP</small> 200</h5>
@@ -28,6 +29,7 @@
 
 <script>
 export default {
+  props:[],
   methods:{
     goToDetail(){
       this.$router.push('/productDetails')
