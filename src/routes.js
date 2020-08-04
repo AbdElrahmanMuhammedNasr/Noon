@@ -7,7 +7,7 @@ import SignUp from "@/SignUp/SignUp";
 export const routes =[
     {path:'/login', component: Login},
     {path:'/SignUp', component: SignUp},
-    {path: '/home',component: Home},
+    {path: '/home',component: Home, name:'Home'},
     {path: '/products',component: Center},
     {path: '/productDetails',component:ProductDetail},
     {path: '/cart',component:Cart}

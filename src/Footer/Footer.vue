@@ -100,7 +100,16 @@
 
       </div>
     </div>
-
+    <hr>
+    <div class="container" style="margin: auto">
+          <h6>Contact With Us</h6>
+          <section style="margin-bottom: 20px">
+            <span class=" fa fa-facebook"></span>
+            <span class=" fa fa-youtube"></span>
+            <span class=" fa fa-instagram"></span>
+            <span class=" fa fa-linkedin"></span>
+          </section>
+    </div>
 
 
   </div>
@@ -122,6 +131,19 @@ export default {
   ul li:first-child{
     font-size: 20px;
     list-style: none;
+  }
+  span{
+    text-align: center;
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding: 15px 0px;
+    font-size: 20px;
+
+  }
+  span:hover{
+    background-color: #fa8902;
   }
 
 

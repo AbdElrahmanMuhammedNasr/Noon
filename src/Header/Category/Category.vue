@@ -7,47 +7,48 @@
         <ul class="navbar-nav row mr-auto">
 
 
+
           <li class="nav-item col active">
-            <router-link to="/home">
-              <a class="nav-link" >Electorn</a>
+            <router-link :to="{name:'Home', query:{Type:'Electronics'} }">
+              <a class="nav-link" >Electronics</a>
             </router-link>
           </li>
 
           <li class="nav-item col">
-            <router-link to="/home">
+            <router-link :to="{name:'Home', query:{Type:'Mobile'} }">
               <a class="nav-link" >Mobile</a>
             </router-link>
           </li>
           <li class="nav-item col">
 
-            <router-link to="/home">
-              <a class="nav-link" >Fasion</a>
+            <router-link :to="{name:'Home', query:{Type:'Fashion'} }">
+              <a class="nav-link" >Fashion</a>
             </router-link>
 
           </li>
           <li class="nav-item col">
-            <router-link to="/home">
+            <router-link :to="{name:'Home', query:{Type:'Electronics'} }">
               <a class="nav-link" >Home</a>
             </router-link>
 
           </li>
           <li class="nav-item col">
-            <router-link to="/home">
+            <router-link :to="{name:'Home', query:{Type:'Baby'} }">
               <a class="nav-link" >Baby</a>
             </router-link>
           </li>
           <li class="nav-item col">
-            <router-link to="/home">
+            <router-link :to="{name:'Home', query:{Type:'Health'} }">
               <a class="nav-link" >Health</a>
             </router-link>
           </li>
           <li class="nav-item col">
-            <router-link to="/home">
-              <a class="nav-link" >SuberMarket</a>
+            <router-link :to="{name:'Home', query:{Type:'SuperMarket'} }">
+              <a class="nav-link" >SuperMarket</a>
             </router-link>
           </li>
           <li class="nav-item col">
-            <router-link to="/home">
+            <router-link :to="{name:'Home', query:{Type:'Deals'} }">
               <a class="nav-link" >Deals</a>
             </router-link>
           </li>
