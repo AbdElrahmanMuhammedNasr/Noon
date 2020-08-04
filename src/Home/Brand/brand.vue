@@ -1,7 +1,7 @@
 <template>
   <div style="text-align: center;  margin: 20px auto; cursor: pointer" @click="goToProducts">
       <img class="ProductImg" :src="brandDetails.image">
-      <h1 style="border-bottom: 5px solid blue;padding: 15px 0px">{{brandDetails.category}}</h1>
+      <h1 style="border-bottom: 5px solid blue;padding: 15px 0px">{{brandDetails.name}}</h1>
   </div>
 </template>
 

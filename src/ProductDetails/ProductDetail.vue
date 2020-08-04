@@ -42,7 +42,7 @@
       <h6 class="text-muted">Quantity</h6>
       <section class="row">
         <input type="number" style="width: 50px; margin: 0px 20px" value="1">
-        <button class="col btn btn-primary">ADD TO CART</button>
+        <button class="col btn btn-primary" @click="addToCart">ADD TO CART</button>
       </section>
 
     </section>
@@ -99,6 +99,11 @@ export default {
         })
         .catch()
 
+  },
+  methods:{
+      addToCart(){
+       return  this.$store.state.cartNumber ++;
+      }
   }
 }
 </script>

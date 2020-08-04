@@ -1,6 +1,6 @@
 <template >
   <div>
-    <div style="background-color: yellow; height:8vh ; padding-top: 10px">
+    <div style="background-color: yellow; height:9vh ; padding-top: 10px">
 <!--      <div style="padding: 0px; width: 76%; margin: auto">-->
 <!--        <nav class="navbar navbar-expand-lg navbar-light" style="height: 20px">-->
 
@@ -55,22 +55,27 @@
 
             </ul>
 
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav navbar-brand  ml-auto">
               <li class="nav-item">
                 <router-link to="/login">
-                  <a class="nav-link">login</a>
+                  <a class="nav-link" style="font-weight: bold">login</a>
                 </router-link>
               </li>
 
-              <li class="nav-item">
-                <router-link to="/cart">
-                  <a class="nav-link" ><span style="font-size: 25px" class="fa fa-shopping-cart"></span></a>
-                </router-link>
-              </li>
+
 
               <li class="nav-item">
                 <router-link to="/profile">
                   <a class="nav-link" ><span style="font-size: 25px" class="fa fa-user"></span></a>
+                </router-link>
+              </li>
+
+              <li class="nav-item" style="margin: 0px 10px">
+                <router-link to="/cart">
+                  <a class="nav-link" >
+                    <span style="font-size: 25px; margin-right: 15px" class="fa fa-shopping-cart"></span>
+                    <span class="badge badge-primary ">{{this.$store.state.cartNumber}}</span>
+                  </a>
                 </router-link>
               </li>
 
