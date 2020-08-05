@@ -17,6 +17,8 @@ export default {
   data(){
     return{
       productsArray: [],
+      type : this.$route.query.Type,
+
     }
   },
   components:{
@@ -24,10 +26,10 @@ export default {
     FilterProduct,
   },
   created() {
-    axios.get('http://localhost:3000/shortCutProducts/getProductsShortCut')
+    axios.get('http://localhost:3000/shortCutProducts/getProductsShortCut', {params :{Type:this.type}})
           .then(res =>{
             this.productsArray = res.data
-            // console.log(res)
+            // console.log(this.productsArray[0]._id)
           })
           .catch()
   }

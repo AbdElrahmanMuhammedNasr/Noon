@@ -10,7 +10,10 @@ export default {
     props:['brandDetails'],
     methods:{
       goToProducts(){
-        this.$router.push('/products')
+        this.$router.push({
+            name:'Products',
+            query : {Type : this.brandDetails.name}
+        })
       }
     }
 }

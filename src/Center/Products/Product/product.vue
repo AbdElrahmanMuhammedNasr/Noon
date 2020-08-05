@@ -7,7 +7,7 @@
         <small v-if="Product.express">
           <img class="ExpressImg" src="https://k.nooncdn.com/s/app/2019/noon-bigalog/48dde9a7d3fdcbdf1d6d56f7d4158a22f65859dd/static/images/noon-express-en.png">
         </small>
-        <small v-if="Product.discount" class="col" style="padding: 5px; background-color: #b3f65d; color: green">{{Product.discount}}% off</small>
+        <small v-if="Product.discount" class="col" style="padding: 5px; background-color: #b3f65d; color: green">EGP {{Product.discount}} off</small>
 
 
     </div>
@@ -18,7 +18,12 @@ export default {
   props:['Product'],
   methods:{
     goToProduct(){
-      this.$router.push('productDetails')
+      this.$router.push({
+        name: 'ProductDetails',
+        query: {ProductId: this.Product._id}
+      }
+
+    )
     }
   }
 }
