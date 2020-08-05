@@ -3,7 +3,7 @@
     <section class="col-sm-4 col-12">
       <img :src="singleProdut[0].image">
     </section>
-    <section class="col-sm-3 offset-1 col-12" style="border: 1px solid lightgray; padding: 20px;margin-top: 20px">
+    <section class="col-sm-4 offset-1 col-12" style="border: 1px solid lightgray; padding: 20px;margin-top: 20px">
         <p class="text-muted" style="font-size:13px">{{singleProdut[0].productsType}}</p>
         <section style="padding-left: 15px">
           <h6>{{singleProdut[0].dis}}</h6>
@@ -26,7 +26,7 @@
 
       <hr>
       <h6>Deliver to <strong style="color: green">{{singleProdut[0].city}}</strong> </h6>
-      <h6>Deliver by form today <span style="color: green; font-weight: bolder">sat Aug 22</span></h6>
+      <h6>Deliver by form today <span style="color: green; font-weight: bolder">{{new Date().toString().substring(0,11)}}</span></h6>
       <h6>Deliver in : <strong style="color: green">{{singleProdut[0].deliverIn}}</strong></h6>
 
       <section v-if="singleProdut[0].type == 'clothes'" >
@@ -50,7 +50,7 @@
       </section>
 
     </section>
-    <section class="col-sm-3 offset-1 col-12" style="border: 1px solid lightgray; padding: 20px; margin-top: 20px">
+    <section class="col-sm-2 offset-1 col-12" style="border: 1px solid lightgray; padding: 20px; margin-top: 20px">
         <p>{{singleProdut[0].guarantee}} warranty</p>
         <p>Sold by <strong>noon</strong> </p>
       <hr>

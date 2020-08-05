@@ -45,11 +45,20 @@
 
 <script>
 import CartProduct from "@/Cart/CartProduct/CartProduct";
+import axios from 'axios';
 export default {
   data(){
     return{
-      carts :[1,2,3,4,5,6,9,]
+      carts :[]
     }
+  },
+  created() {
+    axios.get("http://localhost:3000/cart/getCarts", {params:{email:'abde@gmial.com'}})
+    .then(data=>{
+      this.carts = data.data;
+      console.log(this.carts);
+    })
+    .catch()
   }
   ,components:{
       CartProduct,

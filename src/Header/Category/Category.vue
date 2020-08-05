@@ -27,7 +27,7 @@
 
           </li>
           <li class="nav-item col">
-            <router-link :to="{name:'Home', query:{Type:'Electronics'} }">
+            <router-link :to="{name:'Home', query:{Type:'Home'} }">
               <a class="nav-link" >Home</a>
             </router-link>
 

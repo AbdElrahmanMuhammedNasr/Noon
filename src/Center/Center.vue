@@ -1,9 +1,9 @@
 <template>
-  <div style="width: 88%;height: 200vh ;margin: auto;">
+  <div style="width: 88%;margin: auto">
     <TopPath></TopPath>
     <div class="row">
-        <Category class="col-sm-2 d-none d-sm-block"></Category>
-        <Products class="col-sm-10 col-12 mx-auto" style="text-align: center"></Products>
+        <Category class="col-sm-2 d-none d-sm-block" ></Category>
+        <Products  class="col-sm-10 col-12 mx-auto" style="text-align: center;height: auto;"></Products>
     </div>
 
   </div>
@@ -18,7 +18,7 @@ name: "Center",
   components:{
   TopPath,
   Category,
-    Products,
+  Products,
   }
 }
 </script>

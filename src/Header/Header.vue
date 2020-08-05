@@ -94,7 +94,14 @@
 <script>
 import Category from "@/Header/Category/Category";
 export default {
-  name: "Header",
+  data(){
+    return{
+
+    }
+  },
+  created() {
+
+  },
   components:{
     Category,
   }
