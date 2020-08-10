@@ -28,6 +28,7 @@ export default {
   created() {
     axios.get('http://localhost:3000/shortCutProducts/getProductsShortCut', {params :{Type:this.type}})
           .then(res =>{
+            // console.log(res)
             this.productsArray = res.data
             // console.log(this.productsArray[0]._id)
           })

@@ -1,13 +1,16 @@
 <template>
 
   <div>
-  <div class="spinner-border text-primary" style="margin:15% 50%" role="status" v-if="brands.length <= 0">
+    <div class="spinner-border text-primary" style="margin:15% 50%" role="status" v-if="brands.length <= 0 && found">
     <span class="sr-only">Loading...</span>
   </div>
 
-<!--    <h1>{{type}}</h1>-->
+    <div v-if="!found" style="width: 90%; margin: auto;">
+      <h1  class="text-muted" style="text-align: center">Not Found</h1>
+    </div>
 
-  <div class="row" style="width: 90%; margin: auto" v-if="brands.length > 0">
+
+  <div class="row" style="width: 90%; margin: auto" v-if="brands.length > 0 && found">
       <brand  class="col-sm-4" v-for="bread in brands" :key="bread" :brandDetails="bread"></brand>
   </div>
 
@@ -22,6 +25,7 @@ export default {
     return{
       brands:[],
       type : this.$route.query.Type,
+      found:true,
     }
   },
 
@@ -35,10 +39,18 @@ export default {
     getCategory(){
       axios.get('http://localhost:3000/category/getCategory', {params: {Type:this.type}})
           .then(res =>{
-            this.brands = res.data
-            // console.log(res.data )
+              if(res.data == 'noData'){
+                this.found =false;
+
+            }else {
+                this.found = true;
+                this.brands = res.data
+
+              }
+            // console.log(res)
           })
           .catch()
+
     }
 
   },

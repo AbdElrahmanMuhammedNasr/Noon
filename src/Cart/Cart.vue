@@ -7,7 +7,7 @@
         </section>
 
         <div style="border: 1px solid #cccccc; background-color: #f4f4f4">
-          <CartProduct v-for="cart in carts" :key="cart"></CartProduct>
+          <CartProduct v-for="cart in carts" :key="cart._id" :car="cart"></CartProduct>
         </div>
       </section>
 
@@ -25,16 +25,16 @@
 
 
             <h5 class="col-sm-8 text-muted">Subtotal ({{carts.length}} item)</h5>
-            <h5 class="col-sm-4">EGP 200</h5>
+            <h5 class="col-sm-4">EGP {{total - discount}}</h5>
             <br>
 
             <h6 class="col-sm-8 text-muted">Shipping</h6>
-            <h6 class="col-sm-4" style="color: blue">Free</h6>
+            <h6 class="col-sm-4" style="color: blue">{{shipping = 0 ? 'Free' :shipping}} </h6>
             <br>
             <hr style="margin-bottom: 30px">
 
             <h3 class="col-sm-6">Total</h3>
-            <h3 class="col-sm-6">EGP 200</h3>
+            <h3 class="col-sm-6">EGP  {{  total - discount + shipping}}</h3>
           </section>
         </section>
 
@@ -49,14 +49,21 @@ import axios from 'axios';
 export default {
   data(){
     return{
-      carts :[]
+      carts :[],
+      total:0,
+      discount:0,
+      shipping:10
     }
   },
   created() {
     axios.get("http://localhost:3000/cart/getCarts", {params:{email:'abde@gmial.com'}})
     .then(data=>{
       this.carts = data.data;
-      console.log(this.carts);
+      // console.log(this.carts);
+      this.carts.map(e=>{
+        this.total += e.price,
+        this.discount += e.discount
+      })
     })
     .catch()
   }
