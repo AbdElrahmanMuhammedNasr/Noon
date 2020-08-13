@@ -23,7 +23,6 @@
             <h3 class="col-sm-12" style="margin-bottom: 25px"> Order Summary</h3>
 
 
-
             <h5 class="col-sm-8 text-muted">Subtotal ({{carts.length}} item)</h5>
             <h5 class="col-sm-4">EGP {{total - discount}}</h5>
             <br>
@@ -58,12 +57,15 @@ export default {
   created() {
     axios.get("http://localhost:3000/cart/getCarts", {params:{email:'abde@gmial.com'}})
     .then(data=>{
-      this.carts = data.data;
-      // console.log(this.carts);
-      this.carts.map(e=>{
-        this.total += e.price,
-        this.discount += e.discount
-      })
+          data.data.map(e=>{
+            axios.get('http://localhost:3000/detailsProduct/getProduct', {params:{ID:e.productId}})
+                .then(datadetails=>{
+                      this.total += datadetails.data[0].price,
+                      this.discount += datadetails.data[0].discount
+                      this.carts.push(datadetails.data[0]);
+                }).catch()
+          });
+
     })
     .catch()
   }

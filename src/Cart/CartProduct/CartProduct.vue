@@ -1,6 +1,6 @@
 <template>
   <div class="row" style="margin: 20px; background-color: white; padding: 20px">
-    <img class="col-sm-2" :src="car.image" @click="goToDetail" style="cursor: pointer">
+    <img class="col-sm-2"  :src="car.image" @click="goToDetail" style="cursor: pointer; height:15vh">
     <section class="col-sm-5 offset-1">
 
       <h6 class="text-muted">{{car.dis}}</h6>
